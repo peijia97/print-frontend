@@ -1,0 +1,62 @@
+@import "src/scss/_variables";
+
+.Flyer {
+  display: flex;
+  align-items: center;
+  position: relative;
+  margin-bottom: 2rem;
+
+  %shared-box-style {
+    border: 0.1rem solid;
+    padding: 1rem;
+  }
+
+  .barcode-section {
+    flex: 1;
+    margin-right: 0.5rem;
+    .MuiTypography-h3 {
+      @extend %shared-box-style;
+      display: inline-block;
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    .MuiTypography-h3:first-child {
+      font-size: 2.5rem;
+      margin-right: 0.5rem;
+    }
+  }
+
+  .qr-section {
+    margin-right: 1rem;
+  }
+
+  .description-section {
+    align-self: flex-start;
+    margin-right: 7rem;
+    .inline-text-group {
+      display: flex;
+      justify-content: space-between;
+      margin: 0.5rem 0 1rem;
+    }
+    .MuiTypography-h5 {
+      margin-bottom: 0.3rem;
+    }
+    .MuiTypography-h5:last-of-type {
+      margin: 1rem 0;
+    }
+  }
+
+  .postcode-section {
+    @extend %shared-box-style;
+    position: absolute;
+    right: -2rem;
+    font-weight: bold;
+    height: fit-content;
+    transform: rotate(-90deg);
+    -webkit-transform: rotate(-90deg);
+    -moz-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    -o-transform: rotate(-90deg);
+  }
+}

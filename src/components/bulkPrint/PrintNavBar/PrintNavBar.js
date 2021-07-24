@@ -3,17 +3,13 @@ import AppBar from "@material-ui/core/AppBar";
 import Button from "@material-ui/core/Button";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
-import useMediaQuery from "@material-ui/core/useMediaQuery";
 import IconButton from "@material-ui/core/IconButton";
 import { CustomIcon } from "components/common/CustomIcon/CustomIcon";
-import { useTheme } from "@material-ui/core/styles";
 import { useHistory } from "react-router-dom";
 import "./PrintNavBar.scss";
 
 const PrintNavBar = () => {
-  const theme = useTheme();
   const history = useHistory();
-  const isLgAndUp = useMediaQuery(theme.breakpoints.up("md"));
 
   const handleNavTo = route => {
     history.push({ pathname: route });

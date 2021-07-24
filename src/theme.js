@@ -45,8 +45,8 @@ export const theme = createMuiTheme({
       },
       h6: {
         fontSize: "0.95rem",
-        fontWeight: "500",
-        color: `${colors.grey800}`
+        fontWeight: "600",
+        color: colors.grey800
       },
       subtitle1: {
         fontSize: "0.8rem",
@@ -55,13 +55,13 @@ export const theme = createMuiTheme({
       },
       body1: {
         fontSize: "0.9rem",
-        fontWeight: 500,
+        fontWeight: "500",
         color: colors.grey700,
         lineHeight: `${1.3} !important`
       },
       body2: {
         fontSize: "0.8rem",
-        fontWeight: 500,
+        fontWeight: "500",
         color: colors.grey500,
         lineHeight: `${1.3} !important`
       }

@@ -2,8 +2,8 @@
 
 .PrintModal {
   .MuiDialog-paper {
-    width: 60rem;
-    max-width: 60rem;
+    width: 65rem;
+    max-width: 65rem;
     text-align: left;
     padding: 1.5rem;
 
@@ -18,22 +18,11 @@
       right: -12px;
     }
 
-    img {
-      width: 8rem;
-      margin: auto;
-      margin-bottom: 1.5rem;
-    }
-
-    .MuiTypography-h5 {
+    .title {
       color: $grey700;
       font-size: 1.4rem;
       margin-bottom: 1rem;
       position: relative;
-    }
-
-    .MuiTypography-body1 {
-      font-weight: 600;
-      margin-bottom: 1rem;
     }
 
     .btn-group {
@@ -41,7 +30,6 @@
       width: 45%;
       align-self: flex-end;
       justify-content: flex-end;
-      margin-bottom: 0.8rem;
       .btn-cancel {
         background-color: $grey200 !important;
         color: $grey600 !important;

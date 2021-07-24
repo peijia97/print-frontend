@@ -5,7 +5,10 @@ import Button from "@material-ui/core/Button";
 import IconButton from "@material-ui/core/IconButton";
 import CloseIcon from "@material-ui/icons/Close";
 import { usePrintModalStore } from "states/printModalState";
+import { Invoice } from "components/common/Invoice/Invoice";
+import { Flyer } from "components/bulkPrintCn/Flyer/Flyer";
 import "./PrintModal.scss";
+import { BULK_INVOICE_CN_LIST } from "constants/constants";
 
 const PrintModal = () => {
   const [modalStore] = usePrintModalStore();
@@ -30,7 +33,8 @@ const PrintModal = () => {
 
   return (
     <Dialog className="PrintModal" onClose={handleClose} open={showPrintModal}>
-      <Typography variant="h5">
+      <Typography variant="h5" className="title">
+        {modalStore.title}
         <IconButton
           aria-label="close"
           className="btn-close"
@@ -38,8 +42,12 @@ const PrintModal = () => {
         >
           <CloseIcon />
         </IconButton>
-        {modalStore.title}
       </Typography>
+
+      {/* <Invoice /> */}
+      {BULK_INVOICE_CN_LIST.map(item => (
+        <Flyer item={item} />
+      ))}
 
       <div className="btn-group">
         <Button
