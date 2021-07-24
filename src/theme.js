@@ -2,7 +2,7 @@ import createMuiTheme from "@material-ui/core/styles/createTheme";
 
 const fontFamily = ["Roboto", "Helvetica Neue", "Arial", "sans-serif"];
 const colors = {
-  primary: "#008CDB",
+  primary: "#5278CA",
   primaryLight: "#1e95da",
   primaryDark: "#007ABF",
   success: "#009C6A",
@@ -69,6 +69,7 @@ export const theme = createMuiTheme({
     MuiButton: {
       outlined: {
         border: `0.12rem solid ${colors.primary} !important`,
+        textTransform: "capitalize",
         color: `${colors.primary} !important`,
         backgroundColor: "#fff !important",
         width: "100%",
@@ -78,8 +79,10 @@ export const theme = createMuiTheme({
       },
       contained: {
         background: `${colors.primary} !important`,
-        padding: "1rem",
-        width: "100%",
+        fontSize: "0.9rem",
+        minWidth: "6.5rem",
+        textTransform: "capitalize",
+        padding: "0.5rem 1.5rem",
         color: "#fff !important",
         border: "none !important",
         fontWeight: "bold !important",

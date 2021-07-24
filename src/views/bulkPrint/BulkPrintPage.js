@@ -4,7 +4,6 @@ import Button from "@material-ui/core/Button";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
 import { useTheme } from "@material-ui/core/styles";
 import { Background } from "components/common/Background/Background";
-// import { setModalState } from "states/modalState";
 
 import "./BulkPrintPage.scss";
 
@@ -12,14 +11,7 @@ function BulkPrintPage() {
   const theme = useTheme();
   const isLgAndUp = useMediaQuery(theme.breakpoints.up("md"));
 
-  const handleImport = () => {
-    // setModalState({
-    //   title: "Import Successful!",
-    //   subtitle: "Total of 5 parcel(s) imported",
-    //   btnLabel: "Next",
-    //   secondaryBtnLabel: "Import More"
-    // });
-  };
+  const handlePrint = () => {};
 
   return (
     <Background fullHeight color="BulkPrintPage grey100">
@@ -35,7 +27,7 @@ function BulkPrintPage() {
         </Typography>
 
         <Button
-          onClick={handleImport}
+          onClick={handlePrint}
           variant="contained"
           className={`btn-confirm ${isLgAndUp ? "lg-btn" : ""}`}
         >
