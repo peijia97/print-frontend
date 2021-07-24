@@ -1,0 +1,19 @@
+@import "src/scss/_variables";
+
+.Background {
+  position: relative;
+  padding-top: 0.5rem;
+
+  &.h-screen {
+    min-height: 100vh;
+  }
+
+  &.gradient {
+    background: $primary;
+    background: linear-gradient(42deg, $primary 0%, $success 100%);
+  }
+
+  &.grey100 {
+    background: $grey100;
+  }
+}

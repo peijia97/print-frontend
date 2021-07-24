@@ -1,0 +1,81 @@
+// Here you can add other styles
+body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.flex-1 {
+  flex: 1;
+}
+
+.mt-1 {
+  margin-top: 1rem;
+}
+
+.underline .MuiButton-label {
+  text-decoration: underline;
+}
+
+.MuiDivider-root {
+  margin: 0.5em 0 !important;
+}
+
+.row-divider {
+  margin: 1.3rem 0 1rem 0 !important;
+}
+
+// Suspense
+.suspense-spinner {
+  margin-top: 45vh;
+}
+
+// No more data label
+.label-no-more {
+  text-align: center;
+  margin-top: 0.5rem !important;
+}
+
+// HOME PAGE (DESKTOP MENU)
+.MuiList-root {
+  padding: 0 !important;
+  .MuiMenuItem-root {
+    padding: 0.6rem 1.5rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+  }
+}
+
+// HOME PAGE (MOBILE DRAWER)
+.drawer {
+  width: 15rem;
+}
+
+// SCROLL BAR
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-button {
+  width: 0px;
+  height: 0px;
+}
+::-webkit-scrollbar-thumb {
+  background: $grey400;
+  border: 0px none white;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: $grey500;
+}
+::-webkit-scrollbar-track {
+  background: $grey100;
+  border: 0px solid $grey100;
+}
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
