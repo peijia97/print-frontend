@@ -1,0 +1,22 @@
+@import "src/scss/_variables";
+
+.CustomIcon {
+  img {
+    display: block;
+  }
+  .xxs {
+    height: 0.6rem;
+  }
+  .xs {
+    height: 0.8rem;
+  }
+  .sm {
+    height: 1rem;
+  }
+  .md {
+    height: 1.2rem;
+  }
+  .lg {
+    height: 1.5rem;
+  }
+}

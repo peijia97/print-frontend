@@ -1,40 +1,62 @@
-import React from "react";
-import Typography from "@material-ui/core/Typography";
-import Button from "@material-ui/core/Button";
+import React, { useState } from "react";
+import Card from "@material-ui/core/Card";
+import CardContent from "@material-ui/core/CardContent";
+import Checkbox from "@material-ui/core/Checkbox";
+import FormGroup from "@material-ui/core/FormGroup";
+import FormControlLabel from "@material-ui/core/FormControlLabel";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
 import { useTheme } from "@material-ui/core/styles";
 import { Background } from "components/common/Background/Background";
+import { PrintNavBar } from "components/bulkPrint/PrintNavBar/PrintNavBar";
+import { Invoice } from "components/common/Invoice/Invoice";
+import { BULK_INVOICE_LIST } from "constants/constants";
 
 import "./BulkPrintPage.scss";
 
 function BulkPrintPage() {
   const theme = useTheme();
+  const [checked, setChecked] = useState([]);
   const isLgAndUp = useMediaQuery(theme.breakpoints.up("md"));
 
-  const handlePrint = () => {};
+  const handleCheck = (event, invoiceNo) => {
+    if (event.target.checked) {
+      // push
+      setChecked([...checked, invoiceNo]);
+    } else {
+      // pop
+      setChecked(checked.filter(x => x !== invoiceNo));
+    }
+  };
 
   return (
-    <Background fullHeight color="BulkPrintPage grey100">
-      <Button variant="text" disableRipple className="btn-back">
-        Import Order
-      </Button>
-
-      <div className="summary-section">
-        <Typography variant="h6">Total: RM10.00</Typography>
-        <Typography variant="body1">Total 5 parcel(s)</Typography>
-        <Typography variant="body1">
-          0 error, 5 successful orders imported
-        </Typography>
-
-        <Button
-          onClick={handlePrint}
-          variant="contained"
-          className={`btn-confirm ${isLgAndUp ? "lg-btn" : ""}`}
-        >
-          Confirm Booking
-        </Button>
-      </div>
-    </Background>
+    <>
+      <PrintNavBar />
+      <Background fullHeight color="BulkPrintPage grey100">
+        <div className="left-container">
+          <Card variant="outlined" className="BulkImportCard">
+            <CardContent>
+              {BULK_INVOICE_LIST.map(item => (
+                <FormGroup key={item.invoiceNo}>
+                  <FormControlLabel
+                    control={
+                      <Checkbox
+                        color="primary"
+                        checked={!!checked.find(c => c === item.invoiceNo)}
+                        onChange={e => handleCheck(e, item.invoiceNo)}
+                      />
+                    }
+                    label={`Invoice ${item.invoiceNo}`}
+                  />
+                </FormGroup>
+              ))}
+            </CardContent>
+          </Card>
+        </div>
+        <div className="right-container box-shadow-1">
+          <Invoice />
+        </div>
+      </Background>
+    </>
   );
 }
 

@@ -9,7 +9,7 @@ const colors = {
   danger: "#D94D4C",
   grey100: "#F5F6F9",
   grey200: "#edf2f7",
-  grey300: "#e2e8f0",
+  grey300: "#ececec",
   grey400: "#cbd5e0",
   grey500: "#a0aec0",
   grey600: "#718096",
@@ -41,7 +41,7 @@ export const theme = createMuiTheme({
       h5: {
         fontSize: "1.1rem",
         fontWeight: "600",
-        color: colors.primaryLight
+        color: colors.grey800
       },
       h6: {
         fontSize: "0.95rem",

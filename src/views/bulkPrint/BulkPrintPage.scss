@@ -1,61 +1,25 @@
 @import "src/scss/_variables";
 
 .BulkPrintPage {
-  .btn-back .MuiButton-startIcon {
-    margin-bottom: 0.1rem;
-  }
-
-  .card-header {
+  padding-top: 5rem;
+  .MuiContainer-root {
     display: flex;
-    justify-content: space-between;
-    margin: 0.5rem 0 0.3rem;
-    align-items: center;
-
-    .btn-delete {
-      color: $danger !important;
-    }
-
-    .MuiButton-text {
-      padding: 0 !important;
-      @media only screen and (min-width: 960px) {
-        padding: 0.2rem !important;
-      }
-
-      .MuiButton-startIcon {
-        margin-right: 0.2rem !important;
-        margin-top: -0.15rem;
-      }
-    }
-
-    .MuiButton-text::after {
-      content: "|";
-      margin: 0 0.5rem;
-      color: $primary;
-    }
-
-    .MuiButton-text:last-child {
-      margin-right: 0;
-    }
-    .MuiButton-text:last-child::after {
-      margin: 0;
-      content: "";
-    }
-  }
-
-  .btn-confirm {
-    margin: 0.5rem 0 1rem;
-    &.lg-btn {
-      width: 25%;
-    }
-  }
-
-  .summary-section {
-    .MuiTypography-h6 {
-      font-weight: 600;
-      margin-bottom: 0.2rem;
-    }
-    text-align: right;
     position: relative;
-    margin-top: 1.2rem;
+
+    .left-container {
+      width: 20rem;
+      position: fixed;
+
+      .MuiFormGroup-root {
+        word-break: break-word;
+      }
+    }
+
+    .right-container {
+      width: calc(100% - 22rem);
+      background: white;
+      position: absolute;
+      right: 0;
+    }
   }
 }
