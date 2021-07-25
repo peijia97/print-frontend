@@ -5,8 +5,7 @@ const store = {
     type: "",
     show: false,
     title: "",
-    content: {},
-    action: () => {}
+    content: {}
   },
   setState(value) {
     if (value) {

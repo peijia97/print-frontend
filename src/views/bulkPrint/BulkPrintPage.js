@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
+import { useReactToPrint } from "react-to-print";
 import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
 import Checkbox from "@material-ui/core/Checkbox";
@@ -16,6 +17,10 @@ import "./BulkPrintPage.scss";
 
 function BulkPrintPage() {
   const theme = useTheme();
+  const componentRef = useRef();
+  const handlePrint = useReactToPrint({
+    content: () => componentRef.current
+  });
   const [checked, setChecked] = useState([]);
   const isLgAndUp = useMediaQuery(theme.breakpoints.up("md"));
 
@@ -31,7 +36,7 @@ function BulkPrintPage() {
 
   return (
     <>
-      <PrintNavBar />
+      <PrintNavBar handlePrint={handlePrint} />
       <Background fullHeight color="BulkPrintPage grey100">
         <div className="left-container">
           <Card variant="outlined" className="BulkImportCard">
@@ -53,7 +58,7 @@ function BulkPrintPage() {
             </CardContent>
           </Card>
         </div>
-        <div className="right-container">
+        <div className="right-container" ref={componentRef}>
           {BULK_INVOICE_LIST.filter(b => checked.includes(b.invoiceNo))
             .length ? (
             BULK_INVOICE_LIST.filter(b => checked.includes(b.invoiceNo)).map(

@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
+import { useReactToPrint } from "react-to-print";
 import Dialog from "@material-ui/core/Dialog";
 import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
@@ -13,6 +14,10 @@ import "./PrintModal.scss";
 const PrintModal = () => {
   const [modalStore] = usePrintModalStore();
   const [showPrintModal, setShowPrintModal] = useState(false);
+  const componentRef = useRef();
+  const handlePrint = useReactToPrint({
+    content: () => componentRef.current
+  });
 
   useEffect(() => {
     if (modalStore.show) {
@@ -22,13 +27,6 @@ const PrintModal = () => {
 
   const handleClose = () => {
     setShowPrintModal(false);
-  };
-
-  const handleDoAction = () => {
-    if (modalStore.action) {
-      modalStore.action();
-    }
-    handleClose();
   };
 
   return (
@@ -44,7 +42,7 @@ const PrintModal = () => {
         </IconButton>
       </Typography>
 
-      <div className="print-content">
+      <div className="print-content" ref={componentRef}>
         {modalStore.type === "invoice" ? (
           <Invoice item={INVOICE} />
         ) : (
@@ -60,7 +58,7 @@ const PrintModal = () => {
         >
           Cancel
         </Button>
-        <Button variant="contained" onClick={handleDoAction}>
+        <Button variant="contained" onClick={handlePrint}>
           Print
         </Button>
       </div>

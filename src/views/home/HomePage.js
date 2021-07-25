@@ -14,10 +14,7 @@ function HomePage() {
     setPrintModalState({
       type,
       show: true,
-      title: "Print Invoice",
-      action: () => {
-        console.log("print");
-      }
+      title: "Print Invoice"
     });
   };
 

@@ -8,14 +8,13 @@ import { CustomIcon } from "components/common/CustomIcon/CustomIcon";
 import { useHistory } from "react-router-dom";
 import "./PrintNavBar.scss";
 
-const PrintNavBar = () => {
+const PrintNavBar = props => {
   const history = useHistory();
+  const { handlePrint } = props;
 
   const handleNavTo = route => {
     history.push({ pathname: route });
   };
-
-  const handleAction = () => {};
 
   return (
     <AppBar
@@ -38,7 +37,7 @@ const PrintNavBar = () => {
         </div>
         <div className="title-container">
           <Typography variant="h5">Invoice</Typography>
-          <Button variant="contained" onClick={handleAction}>
+          <Button variant="contained" onClick={handlePrint}>
             Print
           </Button>
         </div>

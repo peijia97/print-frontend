@@ -4,8 +4,8 @@ export const INVOICE = {
   issueDateTime: "23/07/21, 11:50 PM",
   orderDateTime: "23/07/21, 11:50 PM",
   merchantName: "Best Merchant Pte. Ltd.",
-  billingAddress: "1, Flyer Street, Flyer Town, Kuala Lumpur, Malaysia",
-  shippingAddress: "2, Jonker Street, Melaka Town, Melaka, Malaysia",
+  billingAddress: "1, Flyer Street, Flyer Town, 57000 Kuala Lumpur, Malaysia",
+  shippingAddress: "2, Jonker Street, Melaka Town, 45000 Melaka, Malaysia",
   taxPercentage: 0.5,
   currency: "MYR",
   orderItems: [

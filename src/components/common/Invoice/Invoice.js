@@ -8,10 +8,10 @@ const Invoice = props => {
   const { item, ...rest } = props;
   return (
     <div className="Invoice" {...rest}>
-      <Typography variant="h3" className="merchant-title">
+      <Typography variant="h5" className="merchant-title">
         {item.merchantName}
       </Typography>
-      <Typography variant="h5">
+      <Typography variant="h6">
         Your order {item.invoiceNo} has been processed.
       </Typography>
 

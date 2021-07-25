@@ -30,6 +30,12 @@
       overflow: auto;
       margin-bottom: 1rem;
       padding: 0 1rem;
+
+      @media print {
+        @page {
+          size: landscape;
+        }
+      }
     }
 
     .btn-group {
