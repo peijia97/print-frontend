@@ -17,9 +17,12 @@
 
     .right-container {
       width: calc(100% - 22rem);
-      background: white;
-      position: absolute;
-      right: 0;
+      min-height: 98vh;
+      margin-left: 21rem;
+    }
+
+    .no-content-container {
+      background-color: white;
     }
   }
 }

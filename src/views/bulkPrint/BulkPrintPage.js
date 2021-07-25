@@ -3,6 +3,7 @@ import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
 import Checkbox from "@material-ui/core/Checkbox";
 import FormGroup from "@material-ui/core/FormGroup";
+import Typography from "@material-ui/core/Typography";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
 import { useTheme } from "@material-ui/core/styles";
@@ -52,8 +53,23 @@ function BulkPrintPage() {
             </CardContent>
           </Card>
         </div>
-        <div className="right-container box-shadow-1">
-          <Invoice />
+        <div className="right-container">
+          {BULK_INVOICE_LIST.filter(b => checked.includes(b.invoiceNo))
+            .length ? (
+            BULK_INVOICE_LIST.filter(b => checked.includes(b.invoiceNo)).map(
+              item => (
+                <div className="box-shadow-1" key={item.invoiceNo}>
+                  <Invoice item={item} />
+                </div>
+              )
+            )
+          ) : (
+            <div className="no-content-container box-shadow-1">
+              <Typography variant="body1" className="label-no-more">
+                Please select one or more invoice to print
+              </Typography>
+            </div>
+          )}
         </div>
       </Background>
     </>

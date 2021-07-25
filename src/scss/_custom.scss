@@ -36,8 +36,9 @@ body {
 
 // No more data label
 .label-no-more {
+  color: $grey500 !important;
   text-align: center;
-  margin-top: 0.5rem !important;
+  padding: 1rem 0 !important;
 }
 
 // SCROLL BAR

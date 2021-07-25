@@ -20,30 +20,32 @@ const Invoice = props => {
           <Grid item xs={8}>
             <Typography variant="h6">{item.merchantName}</Typography>
           </Grid>
-          <Grid container xs={4}>
-            <Grid item xs={6}>
-              <Typography variant="h6">INVOICE NO:</Typography>
-            </Grid>
-            <Grid item xs={6}>
-              <Typography variant="body1">{item.invoiceNo}</Typography>
-            </Grid>
-            <Grid item xs={6}>
-              <Typography variant="h6">ST NO:</Typography>
-            </Grid>
-            <Grid item xs={6}>
-              <Typography variant="body1">{item.stNo}</Typography>
-            </Grid>
-            <Grid item xs={6}>
-              <Typography variant="h6">Issue Date:</Typography>
-            </Grid>
-            <Grid item xs={6}>
-              <Typography variant="body1">{item.issueDateTime}</Typography>
-            </Grid>
-            <Grid item xs={6}>
-              <Typography variant="h6">Order Date:</Typography>
-            </Grid>
-            <Grid item xs={6}>
-              <Typography variant="body1">{item.orderDateTime}</Typography>
+          <Grid item xs={4}>
+            <Grid container>
+              <Grid item xs={6}>
+                <Typography variant="h6">INVOICE NO:</Typography>
+              </Grid>
+              <Grid item xs={6}>
+                <Typography variant="body1">{item.invoiceNo}</Typography>
+              </Grid>
+              <Grid item xs={6}>
+                <Typography variant="h6">ST NO:</Typography>
+              </Grid>
+              <Grid item xs={6}>
+                <Typography variant="body1">{item.stNo}</Typography>
+              </Grid>
+              <Grid item xs={6}>
+                <Typography variant="h6">Issue Date:</Typography>
+              </Grid>
+              <Grid item xs={6}>
+                <Typography variant="body1">{item.issueDateTime}</Typography>
+              </Grid>
+              <Grid item xs={6}>
+                <Typography variant="h6">Order Date:</Typography>
+              </Grid>
+              <Grid item xs={6}>
+                <Typography variant="body1">{item.orderDateTime}</Typography>
+              </Grid>
             </Grid>
           </Grid>
         </Grid>
@@ -97,8 +99,8 @@ const Invoice = props => {
         </Grid>
 
         {/* INVOICE BODY */}
-        {item.orderItems.map(o => (
-          <Grid container spacing={2} className="item-body">
+        {item.orderItems.map((o, i) => (
+          <Grid container spacing={2} key={i} className="item-body">
             <Grid item xs={1}>
               <Typography variant="h6">{o.name}</Typography>
             </Grid>
@@ -237,8 +239,8 @@ const Invoice = props => {
               </Typography>
             </Grid>
           </Grid>
-          {item.taxSummary.map(t => (
-            <Grid container spacing={2} className="item-body">
+          {item.taxSummary.map((t, i) => (
+            <Grid container spacing={2} key={i} className="item-body">
               <Grid item xs={6}>
                 <Typography variant="h6" className="text-left">
                   {t.code} ({t.percentage}%)
