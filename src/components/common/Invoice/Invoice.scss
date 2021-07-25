@@ -5,6 +5,7 @@
   background-color: white;
   padding: 1rem 2rem;
   margin-bottom: 1rem;
+  min-width: 50rem;
 
   .merchant-title {
     text-align: center;
@@ -36,6 +37,10 @@
       background-color: $grey300;
       margin-top: 1.5rem;
       margin-bottom: 1rem;
+
+      .MuiTypography-h6 {
+        font-size: 0.9rem;
+      }
     }
 
     .item-body {
@@ -43,6 +48,7 @@
       font-size: 1rem !important;
 
       .MuiTypography-h6 {
+        font-size: 0.9rem;
         font-weight: 500;
       }
 

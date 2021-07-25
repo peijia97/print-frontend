@@ -21,7 +21,7 @@ function BulkPrintPage() {
   const handlePrint = useReactToPrint({
     content: () => componentRef.current
   });
-  const [checked, setChecked] = useState([]);
+  const [checked, setChecked] = useState(["#111", "#222", "#333"]);
   const isLgAndUp = useMediaQuery(theme.breakpoints.up("md"));
 
   const handleCheck = (event, invoiceNo) => {
@@ -63,9 +63,12 @@ function BulkPrintPage() {
             .length ? (
             BULK_INVOICE_LIST.filter(b => checked.includes(b.invoiceNo)).map(
               item => (
-                <div className="box-shadow-1" key={item.invoiceNo}>
-                  <Invoice item={item} />
-                </div>
+                <React.Fragment key={item.invoiceNo}>
+                  <div style={{ pageBreakBefore: "always" }} />
+                  <div className="box-shadow-1">
+                    <Invoice item={item} />
+                  </div>
+                </React.Fragment>
               )
             )
           ) : (

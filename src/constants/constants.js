@@ -69,6 +69,7 @@ export const BULK_INVOICE_LIST = [
     billingAddress: "1, Flyer Street, Flyer Town, Kuala Lumpur, Malaysia",
     shippingAddress: "2, Jonker Street, Melaka Town, Melaka, Malaysia",
     currency: "MYR",
+    taxPercentage: 0,
     orderItems: [
       {
         name: "Item 1",
@@ -92,6 +93,7 @@ export const BULK_INVOICE_LIST = [
     billingAddress: "1, Flyer Street, Flyer Town, Kuala Lumpur, Malaysia",
     shippingAddress: "2, Jonker Street, Melaka Town, Melaka, Malaysia",
     currency: "MYR",
+    taxPercentage: 0,
     orderItems: [
       {
         name: "Item 1",

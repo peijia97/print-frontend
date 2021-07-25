@@ -21,29 +21,29 @@ const Invoice = props => {
             <Typography variant="h6">{item.merchantName}</Typography>
           </Grid>
           <Grid item xs={4}>
-            <Grid container>
-              <Grid item xs={6}>
+            <Grid container alignItems="center">
+              <Grid item xs={5}>
                 <Typography variant="h6">INVOICE NO:</Typography>
               </Grid>
-              <Grid item xs={6}>
+              <Grid item xs={7}>
                 <Typography variant="body1">{item.invoiceNo}</Typography>
               </Grid>
-              <Grid item xs={6}>
+              <Grid item xs={5}>
                 <Typography variant="h6">ST NO:</Typography>
               </Grid>
-              <Grid item xs={6}>
+              <Grid item xs={7}>
                 <Typography variant="body1">{item.stNo}</Typography>
               </Grid>
-              <Grid item xs={6}>
+              <Grid item xs={5}>
                 <Typography variant="h6">Issue Date:</Typography>
               </Grid>
-              <Grid item xs={6}>
+              <Grid item xs={7}>
                 <Typography variant="body1">{item.issueDateTime}</Typography>
               </Grid>
-              <Grid item xs={6}>
+              <Grid item xs={5}>
                 <Typography variant="h6">Order Date:</Typography>
               </Grid>
-              <Grid item xs={6}>
+              <Grid item xs={7}>
                 <Typography variant="body1">{item.orderDateTime}</Typography>
               </Grid>
             </Grid>

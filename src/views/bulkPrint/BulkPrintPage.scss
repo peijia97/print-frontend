@@ -2,8 +2,19 @@
 
 .BulkPrintPage {
   padding-top: 5rem;
+
+  @media print {
+    .page-break {
+      margin-top: 1rem;
+      display: block;
+      page-break-before: always;
+    }
+  }
+
   .MuiContainer-root {
-    display: flex;
+    // display: flex;
+    overflow-x: scroll;
+    min-width: 1280px;
     position: relative;
 
     .left-container {
