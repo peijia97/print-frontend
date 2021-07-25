@@ -1,28 +1,35 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { useReactToPrint } from "react-to-print";
+import { useLocation } from "react-router-dom";
 import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
 import Checkbox from "@material-ui/core/Checkbox";
 import FormGroup from "@material-ui/core/FormGroup";
 import Typography from "@material-ui/core/Typography";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
-import useMediaQuery from "@material-ui/core/useMediaQuery";
-import { useTheme } from "@material-ui/core/styles";
 import { Background } from "components/common/Background/Background";
 import { PrintNavBar } from "components/bulkPrint/PrintNavBar/PrintNavBar";
 import { Invoice } from "components/common/Invoice/Invoice";
-import { BULK_INVOICE_LIST } from "constants/constants";
+import { Flyer } from "components/bulkPrintCn/Flyer/Flyer";
+import { BULK_INVOICE_LIST, BULK_INVOICE_CN_LIST } from "constants/constants";
 
 import "./BulkPrintPage.scss";
 
 function BulkPrintPage() {
-  const theme = useTheme();
   const componentRef = useRef();
+  const location = useLocation();
   const handlePrint = useReactToPrint({
     content: () => componentRef.current
   });
+  const [printList, setPrintList] = useState(BULK_INVOICE_LIST);
   const [checked, setChecked] = useState(["#111", "#222", "#333"]);
-  const isLgAndUp = useMediaQuery(theme.breakpoints.up("md"));
+
+  useEffect(() => {
+    if (location.state.type === "flyer") {
+      setPrintList(BULK_INVOICE_CN_LIST);
+      setChecked(["F0001", "F0002", "F0003", "F0004"]);
+    }
+  }, [location.state.type]);
 
   const handleCheck = (event, invoiceNo) => {
     if (event.target.checked) {
@@ -36,12 +43,12 @@ function BulkPrintPage() {
 
   return (
     <>
-      <PrintNavBar handlePrint={handlePrint} />
+      <PrintNavBar handlePrint={handlePrint} type={location.state.type} />
       <Background fullHeight color="BulkPrintPage grey100">
         <div className="left-container">
           <Card variant="outlined" className="BulkImportCard">
             <CardContent>
-              {BULK_INVOICE_LIST.map(item => (
+              {printList.map(item => (
                 <FormGroup key={item.invoiceNo}>
                   <FormControlLabel
                     control={
@@ -51,7 +58,7 @@ function BulkPrintPage() {
                         onChange={e => handleCheck(e, item.invoiceNo)}
                       />
                     }
-                    label={`Invoice ${item.invoiceNo}`}
+                    label={`${location.state.type} ${item.invoiceNo}`}
                   />
                 </FormGroup>
               ))}
@@ -59,18 +66,23 @@ function BulkPrintPage() {
           </Card>
         </div>
         <div className="right-container" ref={componentRef}>
-          {BULK_INVOICE_LIST.filter(b => checked.includes(b.invoiceNo))
-            .length ? (
-            BULK_INVOICE_LIST.filter(b => checked.includes(b.invoiceNo)).map(
-              item => (
+          {printList.filter(b => checked.includes(b.invoiceNo)).length ? (
+            printList
+              .filter(b => checked.includes(b.invoiceNo))
+              .map(item => (
                 <React.Fragment key={item.invoiceNo}>
-                  <div style={{ pageBreakBefore: "always" }} />
-                  <div className="box-shadow-1">
-                    <Invoice item={item} />
-                  </div>
+                  {location.state.type === "invoice" ? (
+                    <>
+                      <div style={{ pageBreakBefore: "always" }} />
+                      <div className="box-shadow-1">
+                        <Invoice item={item} />
+                      </div>
+                    </>
+                  ) : (
+                    <Flyer item={item} />
+                  )}
                 </React.Fragment>
-              )
-            )
+              ))
           ) : (
             <div className="no-content-container box-shadow-1">
               <Typography variant="body1" className="label-no-more">

@@ -7,17 +7,20 @@ import "./Flyer.scss";
 
 const Flyer = props => {
   const { item, ...rest } = props;
+  console.log(item);
   return (
     <div className="Flyer" {...rest}>
       <div className="barcode-section">
-        <Typography variant="h3">{item.id}</Typography>
+        <Typography variant="h3">{item.invoiceNo}</Typography>
         <Typography variant="h3">{item.description}</Typography>
-        <Barcode
-          className="barcode"
-          width={2}
-          height={60}
-          value={item.barcode}
-        />
+        <div className="barcode-container">
+          <Barcode
+            className="barcode"
+            width={2}
+            height={60}
+            value={item.barcode}
+          />
+        </div>
       </div>
       <div className="qr-section">
         <QRCode value="hey" size={180} />

@@ -27,6 +27,10 @@
       margin: 0.5rem;
       margin-left: 3.8rem;
       align-items: center;
+
+      .MuiTypography-h5 {
+        text-transform: capitalize;
+      }
     }
   }
 }

@@ -10,7 +10,7 @@ import "./PrintNavBar.scss";
 
 const PrintNavBar = props => {
   const history = useHistory();
-  const { handlePrint } = props;
+  const { handlePrint, type } = props;
 
   const handleNavTo = route => {
     history.push({ pathname: route });
@@ -36,7 +36,7 @@ const PrintNavBar = props => {
           </IconButton>
         </div>
         <div className="title-container">
-          <Typography variant="h5">Invoice</Typography>
+          <Typography variant="h5">{type}</Typography>
           <Button variant="contained" onClick={handlePrint}>
             Print
           </Button>

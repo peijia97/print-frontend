@@ -112,7 +112,7 @@ export const BULK_INVOICE_LIST = [
 
 export const BULK_INVOICE_CN_LIST = [
   {
-    id: "F0001",
+    invoiceNo: "F0001",
     description: "Some text here",
     barcode: "F00010707F0020XXXXA1",
     name: "Simon Tan",
@@ -124,7 +124,7 @@ export const BULK_INVOICE_CN_LIST = [
     postcode: "47600"
   },
   {
-    id: "F0002",
+    invoiceNo: "F0002",
     description: "Some text here",
     barcode: "F00010707F0020XXXXA2",
     name: "Simon Tan",
@@ -136,7 +136,7 @@ export const BULK_INVOICE_CN_LIST = [
     postcode: "47600"
   },
   {
-    id: "F0003",
+    invoiceNo: "F0003",
     description: "Some text here",
     barcode: "F00010707F0020XXXXA3",
     name: "Simon Tan",
@@ -148,7 +148,7 @@ export const BULK_INVOICE_CN_LIST = [
     postcode: "47600"
   },
   {
-    id: "F0004",
+    invoiceNo: "F0004",
     description: "Some text here",
     barcode: "F00010707F0020XXXXA4",
     name: "Simon Tan",

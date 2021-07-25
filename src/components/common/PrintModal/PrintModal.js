@@ -46,7 +46,9 @@ const PrintModal = () => {
         {modalStore.type === "invoice" ? (
           <Invoice item={INVOICE} />
         ) : (
-          BULK_INVOICE_CN_LIST.map(item => <Flyer key={item.id} item={item} />)
+          BULK_INVOICE_CN_LIST.map(item => (
+            <Flyer key={item.invoiceNo} item={item} />
+          ))
         )}
       </div>
 

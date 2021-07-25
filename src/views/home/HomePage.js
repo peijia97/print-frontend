@@ -18,8 +18,8 @@ function HomePage() {
     });
   };
 
-  const handleNavTo = route => {
-    history.push({ pathname: route });
+  const handleNavTo = (route, type) => {
+    history.push({ pathname: route, state: { type } });
   };
 
   return (
@@ -34,14 +34,14 @@ function HomePage() {
           Print Invoice
         </Button>
         <Button
-          onClick={() => handleNavTo("/bulkPrint")}
+          onClick={() => handleNavTo("/bulkPrint", "invoice")}
           variant="contained"
           className={`btn-confirm`}
         >
           Bulk Print
         </Button>
         <Button
-          onClick={() => handlePrintInvoice("flyer")}
+          onClick={() => handleNavTo("/bulkPrint", "flyer")}
           variant="contained"
           className={`btn-confirm`}
         >

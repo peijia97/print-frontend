@@ -1,6 +1,7 @@
 @import "src/scss/_variables";
 
 .Flyer {
+  background-color: white;
   display: flex;
   align-items: center;
   position: relative;
@@ -15,6 +16,13 @@
   .barcode-section {
     flex: 1;
     margin-right: 0.5rem;
+
+    .barcode-container {
+      width: 23rem;
+      svg {
+        width: inherit;
+      }
+    }
     .MuiTypography-h3 {
       @extend %shared-box-style;
       display: inline-block;
@@ -34,7 +42,7 @@
 
   .description-section {
     align-self: flex-start;
-    margin-right: 7rem;
+    margin-right: 12rem;
     .inline-text-group {
       display: flex;
       justify-content: space-between;
@@ -51,7 +59,7 @@
   .postcode-section {
     @extend %shared-box-style;
     position: absolute;
-    right: -1rem;
+    right: 5rem;
     font-weight: bold;
     height: fit-content;
     transform: rotate(-90deg);
