@@ -86,7 +86,7 @@ function BulkPrintPage() {
           ) : (
             <div className="no-content-container box-shadow-1">
               <Typography variant="body1" className="label-no-more">
-                Please select one or more invoice to print
+                Please select one or more {location.state.type} to print
               </Typography>
             </div>
           )}
