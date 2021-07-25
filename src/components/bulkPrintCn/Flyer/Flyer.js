@@ -7,7 +7,7 @@ import "./Flyer.scss";
 
 const Flyer = props => {
   const { item, ...rest } = props;
-  console.log(item);
+
   return (
     <div className="Flyer" {...rest}>
       <div className="barcode-section">
