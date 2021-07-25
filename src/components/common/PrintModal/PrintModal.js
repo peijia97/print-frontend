@@ -45,9 +45,11 @@ const PrintModal = () => {
       </Typography>
 
       {/* <Invoice /> */}
-      {BULK_INVOICE_CN_LIST.map(item => (
-        <Flyer item={item} />
-      ))}
+      <div className="print-content">
+        {BULK_INVOICE_CN_LIST.map(item => (
+          <Flyer item={item} />
+        ))}
+      </div>
 
       <div className="btn-group">
         <Button

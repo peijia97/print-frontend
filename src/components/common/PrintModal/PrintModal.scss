@@ -2,10 +2,10 @@
 
 .PrintModal {
   .MuiDialog-paper {
-    width: 65rem;
-    max-width: 65rem;
+    width: 70rem;
+    max-width: 70rem;
     text-align: left;
-    padding: 1.5rem;
+    padding: 2.5rem;
 
     @media only screen and (max-width: 374px) {
       padding: 1rem !important;
@@ -23,6 +23,13 @@
       font-size: 1.4rem;
       margin-bottom: 1rem;
       position: relative;
+    }
+
+    .print-content {
+      max-height: 60vh;
+      overflow: auto;
+      margin-bottom: 1rem;
+      padding: 0 1rem;
     }
 
     .btn-group {

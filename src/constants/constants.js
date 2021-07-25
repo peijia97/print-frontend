@@ -126,5 +126,29 @@ export const BULK_INVOICE_CN_LIST = [
     status: "Flyer Not Paid",
     address: "1, Flyer Street, Flyer Town, Kuala Lumpur, Malaysia",
     postcode: "47600"
+  },
+  {
+    id: "F0003",
+    description: "Some text here",
+    barcode: "F00010707F0020XXXXA3",
+    name: "Simon Tan",
+    phoneNumber: "0123456789",
+    type: "Normal",
+    size: "Size 2",
+    status: "Flyer Not Paid",
+    address: "1, Flyer Street, Flyer Town, Kuala Lumpur, Malaysia",
+    postcode: "47600"
+  },
+  {
+    id: "F0004",
+    description: "Some text here",
+    barcode: "F00010707F0020XXXXA4",
+    name: "Simon Tan",
+    phoneNumber: "0123456789",
+    type: "Normal",
+    size: "Size 2",
+    status: "Flyer Not Paid",
+    address: "1, Flyer Street, Flyer Town, Kuala Lumpur, Malaysia",
+    postcode: "47600"
   }
 ];
