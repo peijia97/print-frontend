@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 
 const store = {
   state: {
+    type: "",
     show: false,
     title: "",
     content: {},

@@ -6,20 +6,31 @@ export const INVOICE = {
   merchantName: "Best Merchant Pte. Ltd.",
   billingAddress: "1, Flyer Street, Flyer Town, Kuala Lumpur, Malaysia",
   shippingAddress: "2, Jonker Street, Melaka Town, Melaka, Malaysia",
-  item: [
+  taxPercentage: 0.5,
+  currency: "MYR",
+  orderItems: [
     {
-      currency: "MYR",
       name: "Item 1",
       price: 100,
       quantity: 5,
       discount: 0,
       taxPercentage: 0,
       totalExcludeTax: 500,
-      totalIncludeTax: 500
+      totalIncludeTax: 502.5
+    },
+    {
+      name: "Item 2",
+      price: 200,
+      quantity: 5,
+      discount: 0,
+      taxPercentage: 0,
+      totalExcludeTax: 1000,
+      totalIncludeTax: 1005
     }
   ],
   taxSummary: [
-    { currency: "MYR", code: "SR", percentage: 0, amount: 0, tax: 0 }
+    { code: "SR", percentage: 0, amount: 0, tax: 0 },
+    { code: "ZR", percentage: 0, amount: 0, tax: 0 }
   ],
   remarks: "-"
 };
@@ -33,9 +44,10 @@ export const BULK_INVOICE_LIST = [
     merchantName: "Best Merchant Pte. Ltd.",
     billingAddress: "1, Flyer Street, Flyer Town, Kuala Lumpur, Malaysia",
     shippingAddress: "2, Jonker Street, Melaka Town, Melaka, Malaysia",
-    item: [
+    taxPercentage: 0,
+    currency: "MYR",
+    orderItems: [
       {
-        currency: "MYR",
         name: "Item 1",
         price: 100,
         quantity: 5,
@@ -45,9 +57,7 @@ export const BULK_INVOICE_LIST = [
         totalIncludeTax: 500
       }
     ],
-    taxSummary: [
-      { currency: "MYR", code: "SR", percentage: 0, amount: 0, tax: 0 }
-    ],
+    taxSummary: [{ code: "SR", percentage: 0, amount: 0, tax: 0 }],
     remarks: "-"
   },
   {
@@ -58,9 +68,9 @@ export const BULK_INVOICE_LIST = [
     merchantName: "Best Merchant Pte. Ltd.",
     billingAddress: "1, Flyer Street, Flyer Town, Kuala Lumpur, Malaysia",
     shippingAddress: "2, Jonker Street, Melaka Town, Melaka, Malaysia",
-    item: [
+    currency: "MYR",
+    orderItems: [
       {
-        currency: "MYR",
         name: "Item 1",
         price: 100,
         quantity: 5,
@@ -70,10 +80,8 @@ export const BULK_INVOICE_LIST = [
         totalIncludeTax: 500
       }
     ],
-    taxSummary: [
-      { currency: "MYR", code: "SR", percentage: 0, amount: 0, tax: 0 }
-    ],
-    remarks: "-"
+    taxSummary: [{ code: "SR", percentage: 0, amount: 0, tax: 0 }],
+    remarks: "Item handle with caution"
   },
   {
     invoiceNo: "#333",
@@ -83,9 +91,9 @@ export const BULK_INVOICE_LIST = [
     merchantName: "Best Merchant Pte. Ltd.",
     billingAddress: "1, Flyer Street, Flyer Town, Kuala Lumpur, Malaysia",
     shippingAddress: "2, Jonker Street, Melaka Town, Melaka, Malaysia",
-    item: [
+    currency: "MYR",
+    orderItems: [
       {
-        currency: "MYR",
         name: "Item 1",
         price: 100,
         quantity: 5,
@@ -95,9 +103,7 @@ export const BULK_INVOICE_LIST = [
         totalIncludeTax: 500
       }
     ],
-    taxSummary: [
-      { currency: "MYR", code: "SR", percentage: 0, amount: 0, tax: 0 }
-    ],
+    taxSummary: [{ code: "SR", percentage: 0, amount: 0, tax: 0 }],
     remarks: "-"
   }
 ];

@@ -10,8 +10,9 @@ import "./HomePage.scss";
 function HomePage() {
   const history = useHistory();
 
-  const handlePrintInvoice = () => {
+  const handlePrintInvoice = type => {
     setPrintModalState({
+      type,
       show: true,
       title: "Print Invoice",
       action: () => {
@@ -29,7 +30,7 @@ function HomePage() {
       <div className="home-section">
         <Typography variant="h3">Print Functions</Typography>
         <Button
-          onClick={handlePrintInvoice}
+          onClick={() => handlePrintInvoice("invoice")}
           variant="contained"
           className={`btn-confirm`}
         >
@@ -43,7 +44,7 @@ function HomePage() {
           Bulk Print
         </Button>
         <Button
-          onClick={handlePrintInvoice}
+          onClick={() => handlePrintInvoice("flyer")}
           variant="contained"
           className={`btn-confirm`}
         >

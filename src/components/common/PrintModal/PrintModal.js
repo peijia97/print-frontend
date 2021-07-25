@@ -5,10 +5,10 @@ import Button from "@material-ui/core/Button";
 import IconButton from "@material-ui/core/IconButton";
 import CloseIcon from "@material-ui/icons/Close";
 import { usePrintModalStore } from "states/printModalState";
+import { BULK_INVOICE_CN_LIST, INVOICE } from "constants/constants";
 import { Invoice } from "components/common/Invoice/Invoice";
 import { Flyer } from "components/bulkPrintCn/Flyer/Flyer";
 import "./PrintModal.scss";
-import { BULK_INVOICE_CN_LIST } from "constants/constants";
 
 const PrintModal = () => {
   const [modalStore] = usePrintModalStore();
@@ -44,11 +44,12 @@ const PrintModal = () => {
         </IconButton>
       </Typography>
 
-      {/* <Invoice /> */}
       <div className="print-content">
-        {BULK_INVOICE_CN_LIST.map(item => (
-          <Flyer item={item} />
-        ))}
+        {modalStore.type === "invoice" ? (
+          <Invoice item={INVOICE} />
+        ) : (
+          BULK_INVOICE_CN_LIST.map(item => <Flyer item={item} />)
+        )}
       </div>
 
       <div className="btn-group">

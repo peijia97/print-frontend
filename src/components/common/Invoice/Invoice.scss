@@ -2,4 +2,118 @@
 
 .Invoice {
   position: relative;
+
+  .merchant-title {
+    text-align: center;
+    font-size: 1.6rem;
+    font-weight: bold;
+    margin: 2rem 0;
+  }
+
+  .invoice-container {
+    border: 0.15rem solid $grey300;
+    margin: 1rem 0 3rem;
+    padding: 1.8rem;
+
+    .invoice-title {
+      font-weight: bold;
+      text-align: center;
+      font-size: 1.6rem;
+      margin: 2rem 0;
+    }
+
+    .address {
+      margin-top: 0.5rem;
+      line-height: 1.2rem;
+      max-width: 50%;
+    }
+
+    .item-header {
+      text-align: center;
+      background-color: $grey300;
+      margin-top: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .item-body {
+      text-align: center;
+      font-size: 1rem !important;
+
+      .MuiTypography-h6 {
+        font-weight: 500;
+      }
+
+      .text-left {
+        text-align: left;
+      }
+
+      .text-right {
+        text-align: right;
+      }
+
+      .bold {
+        font-weight: bold;
+      }
+    }
+
+    .item-total {
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+      border-top: 0.15rem solid $grey300;
+      border-bottom: 0.15rem solid $grey300;
+    }
+
+    .item-grand-total {
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+      padding: 0.5rem 0;
+      background-color: $grey300;
+      .MuiTypography-h6 {
+        font-weight: bold;
+      }
+    }
+
+    .shipping-tax {
+      padding-right: 1rem;
+    }
+  }
+
+  .tax-summary-container {
+    border: 0.15rem solid $grey300;
+    margin: 0.5rem 0;
+    padding: 0.5rem 0.8rem;
+  }
+
+  .gratitude-title {
+    font-style: italic;
+    font-size: 1.1rem;
+    color: $grey600;
+    margin: 1rem 0 0.2rem;
+  }
+
+  .gratitude-subtitle {
+    font-style: italic;
+    font-size: 1.1rem;
+    margin-bottom: 3rem;
+  }
+
+  .contact-info {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 0.9rem;
+    a {
+      color: $primary;
+    }
+  }
+
+  .powered-by {
+    text-align: center;
+    margin-bottom: 1rem;
+    span {
+      font-style: italic;
+      color: $grey700;
+      font-weight: bold;
+      font-size: 1.1rem;
+    }
+  }
 }
