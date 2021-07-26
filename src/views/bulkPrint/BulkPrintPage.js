@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef } from "react";
 import { useReactToPrint } from "react-to-print";
 import { useLocation } from "react-router-dom";
 import Card from "@material-ui/core/Card";
@@ -21,15 +21,14 @@ function BulkPrintPage() {
   const handlePrint = useReactToPrint({
     content: () => componentRef.current
   });
-  const [printList, setPrintList] = useState(BULK_INVOICE_LIST);
-  const [checked, setChecked] = useState(["#111", "#222", "#333"]);
-
-  useEffect(() => {
-    if (location.state.type === "flyer") {
-      setPrintList(BULK_INVOICE_CN_LIST);
-      setChecked(["F0001", "F0002", "F0003", "F0004"]);
-    }
-  }, [location.state.type]);
+  const [printList] = useState(
+    location.state.type === "invoice" ? BULK_INVOICE_LIST : BULK_INVOICE_CN_LIST
+  );
+  const [checked, setChecked] = useState(
+    location.state.type === "invoice"
+      ? ["#111", "#222", "#333"]
+      : ["F0001", "F0002", "F0003", "F0004"]
+  );
 
   const handleCheck = (event, invoiceNo) => {
     if (event.target.checked) {

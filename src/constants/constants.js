@@ -26,6 +26,15 @@ export const INVOICE = {
       taxPercentage: 0,
       totalExcludeTax: 1000,
       totalIncludeTax: 1005
+    },
+    {
+      name: "Item 3",
+      price: 200,
+      quantity: 5,
+      discount: 0,
+      taxPercentage: 0,
+      totalExcludeTax: 1000,
+      totalIncludeTax: 1005
     }
   ],
   taxSummary: [
