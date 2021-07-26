@@ -16,7 +16,7 @@
 
   .invoice-container {
     border: 0.15rem solid $grey300;
-    margin: 1rem 0 3rem;
+    margin: 1rem 0 2.5rem;
     padding: 1.5rem;
 
     .invoice-title {
@@ -103,7 +103,7 @@
   .gratitude-subtitle {
     font-style: italic;
     font-size: 1.1rem;
-    margin-bottom: 3rem;
+    margin-bottom: 2.5rem;
   }
 
   .contact-info {
@@ -117,7 +117,7 @@
 
   .powered-by {
     text-align: center;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
     span {
       font-style: italic;
       color: $grey700;

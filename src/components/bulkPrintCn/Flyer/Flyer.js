@@ -23,7 +23,7 @@ const Flyer = props => {
         </div>
       </div>
       <div className="qr-section">
-        <QRCode value="hey" size={180} />
+        <QRCode value={item.barcode} size={180} />
       </div>
       <div className="description-section">
         <Typography variant="h5">{item.description}</Typography>
