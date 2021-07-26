@@ -73,7 +73,7 @@ function BulkPrintPage() {
                   {location.state.type === "invoice" ? (
                     <>
                       <div style={{ pageBreakBefore: "always" }} />
-                      <div className="box-shadow-1">
+                      <div className="mb-1">
                         <Invoice item={item} />
                       </div>
                     </>

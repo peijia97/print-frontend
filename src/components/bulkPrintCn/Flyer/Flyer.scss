@@ -5,8 +5,8 @@
   display: flex;
   align-items: center;
   position: relative;
-  padding: 2.8rem 2rem;
-  min-width: 60rem;
+  padding: 2.8rem 1.8rem;
+  min-width: 55rem;
 
   %shared-box-style {
     border: 0.1rem solid;
@@ -42,16 +42,16 @@
 
   .description-section {
     align-self: flex-start;
-    margin-right: 12rem;
+    margin-right: 6rem;
     .inline-text-group {
       display: flex;
       justify-content: space-between;
       margin: 0.5rem 0 1rem;
     }
-    .MuiTypography-h5 {
+    .MuiTypography-h6 {
       margin-bottom: 0.3rem;
     }
-    .MuiTypography-h5:last-of-type {
+    .MuiTypography-h6:last-of-type {
       margin: 1rem 0;
     }
   }
@@ -59,7 +59,7 @@
   .postcode-section {
     @extend %shared-box-style;
     position: absolute;
-    right: 5rem;
+    right: -1rem;
     font-weight: bold;
     height: fit-content;
     transform: rotate(-90deg);

@@ -26,9 +26,9 @@ const Flyer = props => {
         <QRCode value={item.barcode} size={180} />
       </div>
       <div className="description-section">
-        <Typography variant="h5">{item.description}</Typography>
-        <Typography variant="h5">{item.name}</Typography>
-        <Typography variant="h5">{item.phoneNumber}</Typography>
+        <Typography variant="h6">{item.description}</Typography>
+        <Typography variant="h6">{item.name}</Typography>
+        <Typography variant="h6">{item.phoneNumber}</Typography>
         <div className="inline-text-group">
           <Typography variant="body1">{item.type}</Typography>
           <Typography variant="body1">{item.size}</Typography>
