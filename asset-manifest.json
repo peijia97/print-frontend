@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/print-frontend/static/css/main.1924fa61.chunk.css",
-    "main.js": "/print-frontend/static/js/main.4d737d4c.chunk.js",
-    "main.js.map": "/print-frontend/static/js/main.4d737d4c.chunk.js.map",
+    "main.css": "/print-frontend/static/css/main.d2c06dc3.chunk.css",
+    "main.js": "/print-frontend/static/js/main.76a4fe0a.chunk.js",
+    "main.js.map": "/print-frontend/static/js/main.76a4fe0a.chunk.js.map",
     "runtime-main.js": "/print-frontend/static/js/runtime-main.004943ba.js",
     "runtime-main.js.map": "/print-frontend/static/js/runtime-main.004943ba.js.map",
     "static/js/2.925ad24c.chunk.js": "/print-frontend/static/js/2.925ad24c.chunk.js",
@@ -22,13 +22,13 @@
     "index.html": "/print-frontend/index.html",
     "static/css/4.62d356e8.chunk.css.map": "/print-frontend/static/css/4.62d356e8.chunk.css.map",
     "static/css/5.a6a51a12.chunk.css.map": "/print-frontend/static/css/5.a6a51a12.chunk.css.map",
-    "static/css/main.1924fa61.chunk.css.map": "/print-frontend/static/css/main.1924fa61.chunk.css.map",
+    "static/css/main.d2c06dc3.chunk.css.map": "/print-frontend/static/css/main.d2c06dc3.chunk.css.map",
     "static/js/2.925ad24c.chunk.js.LICENSE.txt": "/print-frontend/static/js/2.925ad24c.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.004943ba.js",
     "static/js/2.925ad24c.chunk.js",
-    "static/css/main.1924fa61.chunk.css",
-    "static/js/main.4d737d4c.chunk.js"
+    "static/css/main.d2c06dc3.chunk.css",
+    "static/js/main.76a4fe0a.chunk.js"
   ]
 }
