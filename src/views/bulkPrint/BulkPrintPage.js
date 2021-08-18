@@ -11,7 +11,14 @@ import { Background } from "components/common/Background/Background";
 import { PrintNavBar } from "components/bulkPrint/PrintNavBar/PrintNavBar";
 import { Invoice } from "components/common/Invoice/Invoice";
 import { Flyer } from "components/bulkPrintCn/Flyer/Flyer";
-import { BULK_INVOICE_LIST, BULK_INVOICE_CN_LIST } from "constants/constants";
+import { ShopeeOrder } from "components/bulkPrintCn/ShopeeOrder/ShopeeOrder";
+import { LazadaOrder } from "components/bulkPrintCn/LazadaOrder/LazadaOrder";
+import {
+  BULK_INVOICE_LIST,
+  BULK_INVOICE_CN_LIST,
+  BULK_LAZADA_ORDER_LIST,
+  BULK_SHOPEE_ORDER_LIST
+} from "constants/constants";
 
 import "./BulkPrintPage.scss";
 
@@ -22,12 +29,22 @@ function BulkPrintPage() {
     content: () => componentRef.current
   });
   const [printList] = useState(
-    location.state.type === "invoice" ? BULK_INVOICE_LIST : BULK_INVOICE_CN_LIST
+    location.state.type === "invoice"
+      ? BULK_INVOICE_LIST
+      : location.state.type === "flyer"
+      ? BULK_INVOICE_CN_LIST
+      : location.state.type === "shopee"
+      ? BULK_SHOPEE_ORDER_LIST
+      : BULK_LAZADA_ORDER_LIST
   );
   const [checked, setChecked] = useState(
     location.state.type === "invoice"
       ? ["#111", "#222", "#333"]
-      : ["F0001", "F0002", "F0003", "F0004"]
+      : location.state.type === "flyer"
+      ? ["F0001", "F0002", "F0003", "F0004"]
+      : location.state.type === "shopee"
+      ? ["210815MBBRWKE6"]
+      : ["295699099279202"]
   );
 
   const handleCheck = (event, invoiceNo) => {
@@ -77,8 +94,22 @@ function BulkPrintPage() {
                         <Invoice item={item} />
                       </div>
                     </>
-                  ) : (
+                  ) : location.state.type === "flyer" ? (
                     <Flyer item={item} />
+                  ) : location.state.type === "shopee" ? (
+                    <>
+                      <div style={{ pageBreakBefore: "always" }} />
+                      <div className="mb-1">
+                        <ShopeeOrder item={item} />
+                      </div>
+                    </>
+                  ) : (
+                    <>
+                      <div style={{ pageBreakBefore: "always" }} />
+                      <div className="mb-1">
+                        <LazadaOrder item={item} />
+                      </div>
+                    </>
                   )}
                 </React.Fragment>
               ))

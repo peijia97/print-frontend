@@ -169,3 +169,62 @@ export const BULK_INVOICE_CN_LIST = [
     postcode: "47600"
   }
 ];
+
+export const BULK_SHOPEE_ORDER_LIST = [
+  {
+    invoiceNo: "210815MBBRWKE6",
+    shipByDate: "18-08-2021",
+    weight: "1.00000",
+    parcelInfo: "N/A",
+    deliveryCode: "KUL-KUL001",
+    deliveryNumber: "013",
+    deliveryAddressType: "HOME",
+    barcode: "620000134764594",
+    senderInfo: {
+      name: "Botanica Boutique",
+      phone: "60123456789",
+      address: "12, Jalan Pelangi, Ampang Baru, Ampang, Selangor",
+      postcode: "34900"
+    },
+    recipientInfo: {
+      name: "Sarah Lee",
+      phone: "60123456888",
+      address:
+        "33, Residensi L, No. 10, Jalan Perpaduan, Taman Rasa, Kuala Lumpur, Kuala Lumpur",
+      postcode: "58000"
+    },
+    pod: {
+      name: "",
+      ic: ""
+    }
+  }
+];
+
+export const BULK_LAZADA_ORDER_LIST = [
+  {
+    invoiceNo: "295699099279202",
+    trackingNumber: "MYMPA035757626",
+    portCode: "H-KDS-TR",
+    shipByDate: "18 Aug 2021",
+    weight: "2 kg",
+    parcelInfo: "N/A",
+    deliveryNumber: "013",
+    paymentType: "Non-COD",
+    paymentAmount: "MYR 0",
+    deliveryType: "STANDARD",
+    deliveryAddressType: "HOME",
+    senderInfo: {
+      name: "Botanica Boutique",
+      phone: "60123456789",
+      address: "12, Jalan Pelangi, Ampang Baru, Ampang, Selangor",
+      postcode: "34900"
+    },
+    recipientInfo: {
+      name: "Sarah Lee",
+      phone: "60123456888",
+      address:
+        "33, Residensi L, No. 10, Jalan Perpaduan, Taman Rasa, Kuala Lumpur, Kuala Lumpur",
+      postcode: "58000"
+    }
+  }
+];

@@ -47,6 +47,20 @@ function HomePage() {
         >
           Bulk Print CN
         </Button>
+        <Button
+          onClick={() => handleNavTo("/bulkPrint", "shopee")}
+          variant="contained"
+          className={`btn-confirm`}
+        >
+          Bulk Print Shopee Order
+        </Button>
+        <Button
+          onClick={() => handleNavTo("/bulkPrint", "lazada")}
+          variant="contained"
+          className={`btn-confirm`}
+        >
+          Bulk Print Lazada Order
+        </Button>
       </div>
     </Background>
   );
