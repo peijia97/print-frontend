@@ -11,15 +11,21 @@ const LazadaOrder = props => {
   return (
     <div className="LazadaOrder" {...rest}>
       <div className="order-container">
-        <Grid container>
-          <Grid item xs={4}>
+        <Grid
+          container
+          direction="row"
+          justifyContent="center"
+          alignItems="center"
+          className="border-bottom"
+        >
+          <Grid item xs={4} className="border-right">
             <Typography variant="h6">Drop-off</Typography>
             <img
               src={`${process.env.PUBLIC_URL}/images/lel.png`}
               alt="lel-logo"
             />
           </Grid>
-          <Grid item xs={4}>
+          <Grid item xs={4} className="border-right">
             <Typography variant="h6">Delivery</Typography>
             <img
               src={`${process.env.PUBLIC_URL}/images/lel.png`}
@@ -27,77 +33,87 @@ const LazadaOrder = props => {
             />
           </Grid>
           <Grid item xs={4}>
-            <Typography variant="h6">{item.portCode}</Typography>
+            <Typography variant="h4" className="text-center">
+              <b>{item.portCode}</b>
+            </Typography>
           </Grid>
         </Grid>
 
-        <Grid container>
-          <Grid item xs={12}>
+        <Grid container className="border-bottom">
+          <Grid item xs={12} className="text-center barcode">
             <Barcode
-              className="barcode"
-              width={2}
-              height={60}
+              width={4}
+              height={220}
               value={item.trackingNumber}
+              text={`Tracking Number: ${item.trackingNumber}`}
             />
-            <Typography variant="h6">{item.trackingNumber}</Typography>
           </Grid>
         </Grid>
 
-        <Grid container>
-          <Grid item xs={8}>
+        <Grid container className="border-bottom">
+          <Grid item xs={8} className="border-right">
             <Typography variant="h6">Seller: {item.senderInfo.name}</Typography>
-            <Typography variant="h6">{item.senderInfo.adderss}</Typography>
+            <Typography variant="h6" className="mb-4">
+              {item.senderInfo.address}
+            </Typography>
             <Typography variant="h6">{item.senderInfo.phone}</Typography>
           </Grid>
-          <Grid item xs={4}>
-            <Typography variant="h6">{item.invoiceNo}</Typography>
-            <Typography variant="h6">{item.paymentType}</Typography>
-            <Typography variant="h6">{item.paymentAmount}</Typography>
-            <Typography variant="h6">{item.weight}</Typography>
+          <Grid item xs={4} className="text-center">
+            <Typography variant="h6" className="border-bottom">
+              {item.invoiceNo}
+            </Typography>
+            <Typography variant="h6" className="border-bottom">
+              {item.paymentType}
+            </Typography>
+            <Typography variant="h6" className="border-bottom">
+              {item.paymentAmount}
+            </Typography>
+            <Typography variant="h6" className="border-bottom">
+              {item.weight}
+            </Typography>
             <Typography variant="h6">{item.shipByDate}</Typography>
           </Grid>
         </Grid>
 
-        <Grid container>
-          <Grid item xs={12}>
+        <Grid container className="border-bottom">
+          <Grid item xs={12} className="text-center barcode">
             <Barcode
-              className="barcode"
-              width={2}
-              height={60}
+              width={4}
+              height={200}
+              text={`Port Code: ${item.portCode}`}
               value={item.portCode}
             />
-            <Typography variant="h6">{item.portCode}</Typography>
           </Grid>
         </Grid>
 
         <Grid container>
-          <Grid item xs={8}>
-            <Grid container>
+          <Grid item xs={8} className="border-right">
+            <Grid container className="mb-4">
               <Grid item xs={10}>
-                <Typography variant="h6">
+                <Typography variant="h5">
                   Customer: {item.recipientInfo.name}
                 </Typography>
               </Grid>
               <Grid item xs={2}>
-                <Typography variant="h6">{item.deliverAddressType}</Typography>
+                <Typography variant="h5" className="text-center">
+                  {item.deliveryAddressType}
+                </Typography>
               </Grid>
             </Grid>
-            <Typography variant="h6">
-              Customer: {item.recipientInfo.name}
+            <Typography variant="h6" className="mb-4">
+              {item.recipientInfo.address}
             </Typography>
-            <Typography variant="h6">{item.recipientInfo.adderss}</Typography>
             <Typography variant="h6">{item.recipientInfo.phone}</Typography>
           </Grid>
-          <Grid item xs={4}>
+          <Grid item xs={4} className="mt-4 text-center">
             <Typography variant="h6">{item.deliveryType}</Typography>
           </Grid>
         </Grid>
 
-        <Grid container>
-          <Grid item xs={12}>
-            <Typography variant="h6">RECEIVER COPY</Typography>
-          </Grid>
-        </Grid>
+        <div className="divider" />
+        <Typography variant="h5" className="pt-2 mb-2 text-center">
+          <b>RECEIVER COPY</b>
+        </Typography>
       </div>
     </div>
   );

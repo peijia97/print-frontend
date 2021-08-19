@@ -4,73 +4,33 @@
   background-color: white;
   position: relative;
   padding: 1rem;
-  min-width: 55rem;
+  min-width: 50rem;
 
   .order-container {
-    border: 0.1rem solid $grey900;
+    border: 0.15rem solid $grey900;
     img {
       width: 100%;
     }
   }
 
-  %shared-box-style {
-    border: 0.1rem solid;
-    padding: 1rem;
+  .MuiTypography-h6 {
+    font-size: 1.05rem !important;
+    line-height: 1.5;
   }
 
-  .barcode-section {
-    flex: 1;
-    margin-right: 0.5rem;
-
-    .barcode-container {
-      width: 23rem;
-      svg {
-        width: inherit;
-      }
-    }
-    .MuiTypography-h3 {
-      @extend %shared-box-style;
-      display: inline-block;
-      font-size: 1.5rem;
-      font-weight: bold;
-    }
-
-    .MuiTypography-h3:first-child {
-      font-size: 2.5rem;
-      margin-right: 0.5rem;
-    }
+  .MuiTypography-h5 {
+    font-size: 1.3rem !important;
   }
 
-  .qr-section {
-    margin-right: 1rem;
+  .border-bottom {
+    border-bottom: 0.15rem solid;
   }
 
-  .description-section {
-    align-self: flex-start;
-    margin-right: 6rem;
-    .inline-text-group {
-      display: flex;
-      justify-content: space-between;
-      margin: 0.5rem 0 1rem;
-    }
-    .MuiTypography-h6 {
-      margin-bottom: 0.3rem;
-    }
-    .MuiTypography-h6:last-of-type {
-      margin: 1rem 0;
-    }
+  .border-right {
+    border-right: 0.15rem solid;
   }
 
-  .postcode-section {
-    @extend %shared-box-style;
-    position: absolute;
-    right: -1rem;
-    font-weight: bold;
-    height: fit-content;
-    transform: rotate(-90deg);
-    -webkit-transform: rotate(-90deg);
-    -moz-transform: rotate(-90deg);
-    -ms-transform: rotate(-90deg);
-    -o-transform: rotate(-90deg);
+  .barcode {
+    padding: 0.5rem 0;
   }
 }

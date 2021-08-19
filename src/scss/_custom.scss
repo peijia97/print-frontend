@@ -13,12 +13,29 @@ body {
   flex: 1;
 }
 
+.pt-2 {
+  padding-top: 0.5rem !important;
+}
+
+.mt-4 {
+  margin-top: 1rem !important;
+}
+
 .mb-4 {
   margin-bottom: 1rem !important;
 }
 
 .mb-2 {
   margin-bottom: 0.5rem !important;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.divider {
+  width: 100%;
+  border-bottom: 0.15rem solid;
 }
 
 .underline .MuiButton-label {

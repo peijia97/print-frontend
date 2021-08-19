@@ -31,7 +31,7 @@ const ShopeeOrder = props => {
               alt="shopee-logo"
             />
           </Grid>
-          <Grid item fl xs={6} style={{ textAlign: "center" }}>
+          <Grid item fl xs={6} className="text-center">
             <Barcode
               className="barcode"
               width={2}
