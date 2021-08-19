@@ -13,8 +13,12 @@ body {
   flex: 1;
 }
 
-.mb-1 {
-  margin-bottom: 1rem;
+.mb-4 {
+  margin-bottom: 1rem !important;
+}
+
+.mb-2 {
+  margin-bottom: 0.5rem !important;
 }
 
 .underline .MuiButton-label {

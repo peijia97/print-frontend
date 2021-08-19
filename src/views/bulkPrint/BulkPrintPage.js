@@ -90,7 +90,7 @@ function BulkPrintPage() {
                   {location.state.type === "invoice" ? (
                     <>
                       <div style={{ pageBreakBefore: "always" }} />
-                      <div className="mb-1">
+                      <div className="mb-4">
                         <Invoice item={item} />
                       </div>
                     </>
@@ -99,14 +99,14 @@ function BulkPrintPage() {
                   ) : location.state.type === "shopee" ? (
                     <>
                       <div style={{ pageBreakBefore: "always" }} />
-                      <div className="mb-1">
+                      <div className="mb-4">
                         <ShopeeOrder item={item} />
                       </div>
                     </>
                   ) : (
                     <>
                       <div style={{ pageBreakBefore: "always" }} />
-                      <div className="mb-1">
+                      <div className="mb-4">
                         <LazadaOrder item={item} />
                       </div>
                     </>

@@ -40,7 +40,7 @@ export const theme = createMuiTheme({
     MuiTypography: {
       h5: {
         fontSize: "1.1rem",
-        fontWeight: "600",
+        fontWeight: "bold",
         color: colors.grey800
       },
       h6: {
