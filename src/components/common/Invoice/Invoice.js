@@ -6,6 +6,12 @@ import "./Invoice.scss";
 
 const Invoice = props => {
   const { item, ...rest } = props;
+
+  const calcSubtotal = item => {
+    return item.orderItems
+      .map(o => o.price * o.quantity - o.discount)
+      .reduce((a, b) => a + b, 0);
+  };
   return (
     <div className="Invoice" {...rest}>
       <Typography variant="h5" className="merchant-title">
@@ -72,36 +78,30 @@ const Invoice = props => {
 
         {/* INVOICE HEADER */}
         <Grid container spacing={2} alignItems="center" className="item-header">
-          <Grid item xs={1}>
+          <Grid item xs={2}>
             <Typography variant="h6">Item</Typography>
           </Grid>
           <Grid item xs={2}>
             <Typography variant="h6">Price</Typography>
           </Grid>
-          <Grid item xs={1}>
+          <Grid item xs={2}>
             <Typography variant="h6">Quantity</Typography>
           </Grid>
           <Grid item xs={2}>
             <Typography variant="h6">Sub total</Typography>
           </Grid>
-          <Grid item xs={1}>
+          <Grid item xs={2}>
             <Typography variant="h6">Discount</Typography>
           </Grid>
           <Grid item xs={2}>
-            <Typography variant="h6">Total excl. tax</Typography>
-          </Grid>
-          <Grid item xs={1}>
-            <Typography variant="h6">Tax ({item.taxPercentage}%)</Typography>
-          </Grid>
-          <Grid item xs={2}>
-            <Typography variant="h6">Total incl. tax</Typography>
+            <Typography variant="h6">Total</Typography>
           </Grid>
         </Grid>
 
         {/* INVOICE BODY */}
         {item.orderItems.map((o, i) => (
           <Grid container spacing={2} key={i} className="item-body">
-            <Grid item xs={1}>
+            <Grid item xs={2}>
               <Typography variant="h6">{o.name}</Typography>
             </Grid>
             <Grid item xs={2}>
@@ -109,7 +109,7 @@ const Invoice = props => {
                 {item.currency} {Number(o.price).toFixed(2)}
               </Typography>
             </Grid>
-            <Grid item xs={1}>
+            <Grid item xs={2}>
               <Typography variant="h6">{o.quantity}</Typography>
             </Grid>
             <Grid item xs={2}>
@@ -117,27 +117,15 @@ const Invoice = props => {
                 {item.currency} {Number(o.price * o.quantity).toFixed(2)}
               </Typography>
             </Grid>
-            <Grid item xs={1}>
+            <Grid item xs={2}>
               <Typography variant="h6">
                 {item.currency} {Number(o.discount).toFixed(2)}
               </Typography>
             </Grid>
             <Grid item xs={2}>
               <Typography variant="h6">
-                {item.currency} {Number(o.totalExcludeTax).toFixed(2)}
-              </Typography>
-            </Grid>
-            <Grid item xs={1}>
-              <Typography variant="h6">
                 {item.currency}{" "}
-                {Number((item.taxPercentage / 100) * o.totalExcludeTax).toFixed(
-                  2
-                )}
-              </Typography>
-            </Grid>
-            <Grid item xs={2}>
-              <Typography variant="h6">
-                {item.currency} {Number(o.totalIncludeTax).toFixed(2)}
+                {Number(o.price * o.quantity - o.discount).toFixed(2)}
               </Typography>
             </Grid>
           </Grid>
@@ -145,7 +133,7 @@ const Invoice = props => {
 
         {/* TOTAL AMOUNT */}
         <Grid container spacing={2} className="item-body item-total">
-          <Grid item xs={4}>
+          <Grid item xs={6}>
             <Typography variant="h6" className="text-right bold">
               Total Amount
             </Typography>
@@ -160,7 +148,7 @@ const Invoice = props => {
               ).toFixed(2)}
             </Typography>
           </Grid>
-          <Grid item xs={1}>
+          <Grid item xs={2}>
             <Typography variant="h6">
               {item.currency}{" "}
               {Number(
@@ -173,27 +161,7 @@ const Invoice = props => {
               {item.currency}{" "}
               {Number(
                 item.orderItems
-                  .map(o => o.totalExcludeTax)
-                  .reduce((a, b) => a + b, 0)
-              ).toFixed(2)}
-            </Typography>
-          </Grid>
-          <Grid item xs={1}>
-            <Typography variant="h6">
-              {item.currency}{" "}
-              {Number(
-                item.orderItems
-                  .map(o => (item.taxPercentage / 100) * o.totalExcludeTax)
-                  .reduce((a, b) => a + b, 0)
-              ).toFixed(2)}
-            </Typography>
-          </Grid>
-          <Grid item xs={2}>
-            <Typography variant="h6">
-              {item.currency}{" "}
-              {Number(
-                item.orderItems
-                  .map(o => o.totalIncludeTax)
+                  .map(o => o.price * o.quantity - o.discount)
                   .reduce((a, b) => a + b, 0)
               ).toFixed(2)}
             </Typography>
@@ -204,16 +172,35 @@ const Invoice = props => {
         <Grid container spacing={2} className="item-body item-grand-total">
           <Grid item xs={10}>
             <Typography variant="h6" className="text-right bold">
-              Total
+              Subtotal
+            </Typography>
+          </Grid>
+          <Grid item xs={2}>
+            <Typography variant="h6">
+              {item.currency} {Number(calcSubtotal(item)).toFixed(2)}
+            </Typography>
+          </Grid>
+          <Grid item xs={10}>
+            <Typography variant="h6" className="text-right bold">
+              Tax {item.taxPercentage * 100}%
+            </Typography>
+          </Grid>
+          <Grid item xs={2}>
+            <Typography variant="h6">
+              {item.currency}{" "}
+              {Number(calcSubtotal(item) * item.taxPercentage).toFixed(2)}
+            </Typography>
+          </Grid>
+          <Grid item xs={10}>
+            <Typography variant="h6" className="text-right bold">
+              Grand Total
             </Typography>
           </Grid>
           <Grid item xs={2}>
             <Typography variant="h6">
               {item.currency}{" "}
               {Number(
-                item.orderItems
-                  .map(o => o.totalIncludeTax)
-                  .reduce((a, b) => a + b, 0)
+                calcSubtotal(item) + calcSubtotal(item) * item.taxPercentage
               ).toFixed(2)}
             </Typography>
           </Grid>
